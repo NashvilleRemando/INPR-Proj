@@ -1,49 +1,50 @@
 Room #001:
-Category: Luxury Suite
+Category: Occupied
 Bedrooms: 3
 Price: 20000.00
-Status: Occupied
-Guest: 
-ID: 
-Phone: 
-Nights: 
+Status:
+Guest:
+ID:
+Phone:
+Nights:
 
 Room #002:
-Category: Deluxe Room
+Category: Vacant
 Bedrooms: 2
 Price: 12000.00
 Status: Vacant
-Guest: 
-ID: 
-Phone: 
-Nights: 
+Guest:
+ID:
+Phone:
+Nights:
 
 Room #003:
-Category: Standard Room
+Category: Vacant
 Bedrooms: 1
 Price: 6000.00
 Status: Vacant
 Guest: 
-ID: 
-Phone: 
-Nights: 
+ID:
+Phone:
+Nights:
 
 Room #004:
-Category: Presidential Suite
+Category: Vacant
 Bedrooms: 4
 Price: 35000.00
-Status: Vacant
-Guest: 
-ID: 
-Phone: 
-Nights: 
+Status: Occupied
+Guest:
+ID:
+Phone:
+Nights:
 
 Room #005:
-Category: Junior Suite
-Bedrooms: 2
+Category: Vacant
+Bedrooms:
 Price: 15000.00
-Status: Vacant
-Guest: 
-ID: 
-Phone: 
+Status: Occupied
+Guest:
+ID:
+Phone:
 Nights:
+

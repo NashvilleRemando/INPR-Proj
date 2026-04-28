@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
+#include <time.h>
 
 #define MAX 100
 
@@ -10,6 +12,8 @@ FILE *fptr;
 void displayMenu();
 void chooseOption();
 void listVacant();
+void reserve();
+void generateID(char *idOut);
 
 typedef struct
 {
@@ -39,7 +43,7 @@ int main()
 
 void displayMenu()
 {
-    printf("\n--- GILDED LUXURY ---\n");
+    printf("\n--- ESPLENIN HOTEL ---\n");
     printf("1. Vacancies\n");
     printf("2. Reserve\n");
     printf("3. Details\n");
@@ -68,7 +72,7 @@ void chooseOption()
         listVacant();
         break;
     case 2:
-        printf("Reserve: coming soon.\n");
+        reserve();
         break;
     case 3:
         printf("Details: coming soon.\n");
@@ -83,7 +87,7 @@ void chooseOption()
         printf("Inquiry: coming soon.\n");
         break;
     case 7:
-        printf("Exiting GILDED system...\n");
+        printf("Exiting ESPLENIN HOTEL system...\n");
         break;
     default:
         printf("Invalid choice. Try again.\n");
@@ -93,6 +97,7 @@ void chooseOption()
 int readRoom(FILE *fptr, Room *r)
 {
     char line[150];
+    char statusBuf[30];
     int filled = 0;
 
     while (fgets(line, sizeof(line), fptr))
@@ -121,7 +126,7 @@ int readRoom(FILE *fptr, Room *r)
         }
         else if (strncmp(line, "Status:", 7) == 0)
         {
-            sscanf(line, "Status: %29[^\n]", r->category); // temp reuse
+            sscanf(line, "Status: %29[^\n]", statusBuf);
             r->isAvailable = (strstr(line, "Vacant") != NULL);
             filled++;
         }
@@ -151,7 +156,7 @@ int readRoom(FILE *fptr, Room *r)
             break;
     }
 
-    return filled > 0; // returns 0 when no more rooms (EOF)
+    return filled > 0;
 }
 
 void listVacant() {
@@ -171,8 +176,8 @@ void listVacant() {
     {
         if (room.isAvailable)
         {
-            printf("Room #%03d | %-20s | %d bed(s) | PHP %.2f/night\n",
-                    room.roomNum, room.category, room.bedrooms, room.price);
+            printf("Room #%03d | %d bed(s) | PHP %.2f/night\n",
+                    room.roomNum, room.bedrooms, room.price);
             found = 1;
         }
     }
@@ -182,9 +187,102 @@ void listVacant() {
     fclose(fptr);
 }
 
-void reserveRoom(){
 
+// Option 2
+void reserve() {
+    fptr = fopen("rooms.txt", "r");
+    if (fptr == NULL) { printf("Could not open rooms.txt\n"); return; }
+
+    Room rooms[MAX];
+    int count = 0;
+
+    while (readRoom(fptr, &rooms[count]))
+        count++;
+
+    fclose(fptr);
+
+    // show only vacant rooms
+    printf("\n--- AVAILABLE ROOMS ---\n");
+    int anyVacant = 0;
+    for (int i = 0; i < count; i++) {
+        if (rooms[i].isAvailable) {
+            printf("Room #%03d | %d bed(s) | PHP %.2f/night\n",
+                   rooms[i].roomNum, rooms[i].bedrooms, rooms[i].price);
+            anyVacant = 1;
+        }
+    }
+    if (!anyVacant) { printf("No vacant rooms.\n"); return; }
+
+    // pick a room
+    int pick;
+    printf("\nEnter room number to reserve: ");
+    scanf("%d", &pick);
+    while (getchar() != '\n');
+
+    // Find room chosen by user 
+    int idx = -1;
+    for (int i = 0; i < count; i++) {
+        if (rooms[i].roomNum == pick && rooms[i].isAvailable) {
+            idx = i;
+            break;
+        }
+    }
+    if (idx == -1) { printf("Room not found or already occupied.\n"); return; }
+
+    printf("Guest Name  : ");
+    fgets(rooms[idx].guestName, sizeof(rooms[idx].guestName), stdin);
+    rooms[idx].guestName[strcspn(rooms[idx].guestName, "\n")] = '\0';
+
+    printf("Phone Number: ");
+    fgets(rooms[idx].guestPhone, sizeof(rooms[idx].guestPhone), stdin);
+    rooms[idx].guestPhone[strcspn(rooms[idx].guestPhone, "\n")] = '\0';
+
+    printf("Nights      : ");
+    scanf("%d", &rooms[idx].nights);
+    while (getchar() != '\n');
+
+    rooms[idx].isAvailable = 0;
+    
+    generateID(rooms[idx].guestID);
+
+    float total = rooms[idx].price * rooms[idx].nights;
+    printf("\n--- RESERVATION SUMMARY ---\n");
+    printf("Room    : #%03d %s\n", rooms[idx].roomNum, rooms[idx].category);
+    printf("Guest   : %s\n", rooms[idx].guestName);
+    printf("Guest ID: %s\n", rooms[idx].guestID);
+    printf("Phone   : %s\n", rooms[idx].guestPhone);
+    printf("Nights  : %d\n", rooms[idx].nights);
+    printf("Total   : PHP %.2f\n", total);
+
+    // Put it in rooms.txt file
+    fptr = fopen("rooms.txt", "w");
+    if (fptr == NULL) { printf("Could not save reservation.\n"); return; }
+
+    for (int i = 0; i < count; i++) {
+        fprintf(fptr, "Room #%03d:\n",        rooms[i].roomNum);
+        fprintf(fptr, "Category: %s\n",       rooms[i].category);
+        fprintf(fptr, "Bedrooms: %d\n",       rooms[i].bedrooms);
+        fprintf(fptr, "Price: %.2f\n",        rooms[i].price);
+        fprintf(fptr, "Status: %s\n",         rooms[i].isAvailable ? "Vacant" : "Occupied");
+        fprintf(fptr, "Guest: %s\n",          rooms[i].guestName);
+        fprintf(fptr, "ID: %s\n",             rooms[i].guestID);
+        fprintf(fptr, "Phone: %s\n",          rooms[i].guestPhone);
+        fprintf(fptr, "Nights: %d\n",         rooms[i].nights);
+        fprintf(fptr, "\n");
+    }
+
+    fclose(fptr);
+    printf("\nRoom #%03d successfully reserved!\n", rooms[idx].roomNum);
 }
+
+void generateID(char *idOut) {
+    static int seeded = 0;
+    if (!seeded) { srand(time(NULL)); seeded = 1; }
+
+    int id = 100000000 + rand() % 900000000;
+    sprintf(idOut, "%d", id);
+}
+
 
 void findGuest(){
 
