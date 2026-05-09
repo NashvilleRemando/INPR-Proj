@@ -1,50 +1,48 @@
 Room #001:
-Category: Occupied
+Category: Luxury Suite
 Bedrooms: 3
-Price: 20000.00
-Status:
-Guest:
-ID:
-Phone:
-Nights:
+Price: 20.00
+Status: Occupied
 
 Room #002:
-Category: Vacant
+Category: Luxury Suite
 Bedrooms: 2
-Price: 12000.00
-Status: Vacant
-Guest:
-ID:
-Phone:
-Nights:
+Price: 12.00
+Status: Occupied
 
 Room #003:
-Category: Vacant
+Category: Luxury Suite
 Bedrooms: 1
-Price: 6000.00
-Status: Vacant
-Guest: 
-ID:
-Phone:
-Nights:
+Price: 6.00
+Status: Occupied
 
 Room #004:
-Category: Vacant
+Category: De Luxe
 Bedrooms: 4
-Price: 35000.00
+Price: 35.00
 Status: Occupied
-Guest:
-ID:
-Phone:
-Nights:
 
 Room #005:
-Category: Vacant
-Bedrooms:
-Price: 15000.00
+Category: Suite
+Bedrooms: 4
+Price: 15.00
 Status: Occupied
-Guest:
-ID:
-Phone:
-Nights:
+
+Room #006:
+Category: Luxury Suite
+Bedrooms: 0
+Price: 15.00
+Status: Occupied
+
+Room #007:
+Category: Suite
+Bedrooms: 0
+Price: 15.00
+Status: Vacant
+
+Room #008:
+Category: Luxury Suite
+Bedrooms: 0
+Price: 15.00
+Status: Occupied
 
