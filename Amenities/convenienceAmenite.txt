@@ -1,0 +1,4 @@
+Code: E1
+Name: Extra Bed
+Price: 1000.00
+Type: PerNight

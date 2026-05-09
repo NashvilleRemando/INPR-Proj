@@ -1,0 +1,14 @@
+Code: S1
+Name: Aromatherapy Massage
+Price: 1500.00
+Type: PerGuest
+
+Code: S2
+Name: Deep Tissue Sauna
+Price: 800.00
+Type: PerGuest
+
+Code: S3
+Name: Full Body Scrub
+Price: 2200.00
+Type: PerGuest

@@ -24,19 +24,19 @@ Change:
 
 ------- Guest Info -------
 Reference No: B0002
-Room #: 002
-Room Type: Luxury Suite
+Room #: 005
+Room Type: Suite
 Main Guest: Jon Snow
-No of Guest: 4
-Check-In: February 14 2028
-Checkout: March 19 2029
-No of Days: 5
+No of Guest: 3
+Check-In: March 27, 2027
+Checkout: March 20, 2028
+No of Days: 2
 
 ------- Bill Info -------
-Room Rate: 60000.00
+Room Rate: 30.00
 Amenities Used:
 Amenities Total: 0.00
-Final Amount: 60000.00
+Final Amount: 30.00
 
 ------- Payment Info -------
 Status: Not Paid
@@ -48,139 +48,19 @@ Change:
 
 ------- Guest Info -------
 Reference No: B0003
-Room #: 004
-Room Type: De Luxe
-Main Guest: Jon Snow
-No of Guest: 4
-Check-In: March 20, 2026
-Checkout: December 31, 2026
-No of Days: 4
-
-------- Bill Info -------
-Room Rate: 140000.00
-Amenities Used:
-Amenities Total: 0.00
-Final Amount: 140000.00
-
-------- Payment Info -------
-Status: Not Paid
-Method:
-Amount Received:
-Change:
-
-===========================================================
-
-------- Guest Info -------
-Reference No: B0004
-Room #: 005
+Room #: 007
 Room Type: Suite
-Main Guest: Jon Snow
-No of Guest: 2
-Check-In: March 20, 2027
-Checkout: March 22, 2027
-No of Days: 3
-
-------- Bill Info -------
-Room Rate: 45.00
-Amenities Used:
-Amenities Total: 0.00
-Final Amount: 45.00
-
-------- Payment Info -------
-Status: Paid
-Method: Cash
-Amount Received: 788.00
-Change: 743.00
-
-===========================================================
-
-------- Guest Info -------
-Reference No: B0005
-Room #: 001
-Room Type: Luxury Suite
-Main Guest: Danery Targaeryen
-No of Guest: 4
-Check-In: February 24, 2027
-Checkout: December 28, 2027
+Main Guest: Jon SNow
+No of Guest: 3
+Check-In: March 25, 2027
+Checkout: March 29, 2027
 No of Days: 4
 
 ------- Bill Info -------
-Room Rate: 80.00
+Room Rate: 60000.00
 Amenities Used:
 Amenities Total: 0.00
-Final Amount: 80.00
-
-------- Payment Info -------
-Status: Not Paid
-Method:
-Amount Received:
-Change:
-
-===========================================================
-
-------- Guest Info -------
-Reference No: B0006
-Room #: 003
-Room Type: Luxury Suite
-Main Guest: Jon Snoow
-No of Guest: 5
-Check-In: March 20, 2027
-Checkout: March  29, 2028
-No of Days: 6
-
-------- Bill Info -------
-Room Rate: 36.00
-Amenities Used:
-Amenities Total: 0.00
-Final Amount: 36.00
-
-------- Payment Info -------
-Status: Not Paid
-Method:
-Amount Received:
-Change:
-
-===========================================================
-
-------- Guest Info -------
-Reference No: B0007
-Room #: 006
-Room Type: Luxury Suite
-Main Guest: Jon
-No of Guest: 5
-Check-In: March 20, 2028
-Checkout: March 29, 2029
-No of Days: 6
-
-------- Bill Info -------
-Room Rate: 90.00
-Amenities Used:
-Amenities Total: 0.00
-Final Amount: 90.00
-
-------- Payment Info -------
-Status: Not Paid
-Method:
-Amount Received:
-Change:
-
-===========================================================
-
-------- Guest Info -------
-Reference No: B0008
-Room #: 008
-Room Type: Luxury Suite
-Main Guest: Aegon Tar
-No of Guest: 5
-Check-In: March 31, 2099
-Checkout: March 21, 2100
-No of Days: 5
-
-------- Bill Info -------
-Room Rate: 75.00
-Amenities Used:
-Amenities Total: 0.00
-Final Amount: 75.00
+Final Amount: 60000.00
 
 ------- Payment Info -------
 Status: Not Paid
