@@ -1,0 +1,22 @@
+========================================
+         ESPLENIN HOTEL RECEIPT
+========================================
+Reference No  : B0006
+Guest Name    : asdasda
+Room #        : 003
+Room Type     : Luxury Suite
+Check-In      : asdasdasd
+Check-Out     : asdasda
+No. of Guests : 2
+No. of Days   : 3
+----------------------------------------
+Room Rate     : PHP 18000.00
+Amenities     : PHP 3000.00
+----------------------------------------
+TOTAL DUE     : PHP 21000.00
+Amount Paid   : PHP 132312.00
+Change        : PHP 111312.00
+Method        : GCash
+========================================
+     Thank you for choosing us!
+========================================

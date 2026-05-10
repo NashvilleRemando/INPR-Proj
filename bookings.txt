@@ -23,30 +23,6 @@ Change:
 ===========================================================
 
 ------- Guest Info -------
-Reference No: B0002
-Room #: 005
-Room Type: Suite
-Main Guest: Jon Snow
-No of Guest: 3
-Check-In: March 27, 2027
-Checkout: March 20, 2028
-No of Days: 2
-
-------- Bill Info -------
-Room Rate: 30.00
-Amenities Used:
-Amenities Total: 0.00
-Final Amount: 30.00
-
-------- Payment Info -------
-Status: Not Paid
-Method:
-Amount Received:
-Change:
-
-===========================================================
-
-------- Guest Info -------
 Reference No: B0003
 Room #: 007
 Room Type: Suite
@@ -68,4 +44,29 @@ Method:
 Amount Received:
 Change:
 
+
+
+------- Guest Info -------
+Reference No: B0004
+Room #: 002
+Room Type: Luxury Suite
+Main Guest: nashville
+No of Guest: 3
+Check-In: dasdasdas
+Checkout: asdasdasd
+No of Days: 2
+
+------- Bill Info -------
+Room Rate: 24000.00
+Amenities Used:
+Amenities Total: 0.00
+Final Amount: 24000.00
+
+------- Payment Info -------
+Status: Paid
+Method: Cash
+Amount Received: 240000.00
+Change: 216000.00
+
 ===========================================================
+
